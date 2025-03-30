@@ -1,0 +1,993 @@
+{
+  "last_node_id": 23,
+  "last_link_id": 235,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1360,
+        -660
+      ],
+      "size": [
+        313.2001037597656,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            222
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        2
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1690,
+        -500
+      ],
+      "size": [
+        162.92697143554688,
+        46
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 223
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 224
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            225
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 16,
+      "type": "CLIPTextEncode",
+      "pos": [
+        394.5018005371094,
+        -266.99688720703125
+      ],
+      "size": [
+        401.24609375,
+        78
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 211
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 212
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            230
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "cyberpunk princess, latina, jasmine, beautiful, full body, soft, happy, edgerunner, tech wear, baggy pants with extra pockets, jacket, graffiti on clothes, dancer\n\n\n "
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 12,
+      "type": "CLIPTextEncode",
+      "pos": [
+        400,
+        280
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 210
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            217
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        10.034461975097656,
+        -284.46002197265625
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            219
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            209,
+            210,
+            211,
+            213,
+            226,
+            228
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            224
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "juggernautXL_juggXIByRundiffusion.safetensors"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "CLIPTextEncode",
+      "pos": [
+        400.9981994628906,
+        -151.449462890625
+      ],
+      "size": [
+        401.24609375,
+        78
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 226
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 227
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            231
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "cyberpunk princess, latina, jasmine, beautiful, full body, soft, happy, edgerunner, tech wear, baggy pants with extra pockets, jacket, graffiti on clothes, dancer\n\n\n "
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 22,
+      "type": "ConditioningConcat",
+      "pos": [
+        819.6087646484375,
+        -615.1839599609375
+      ],
+      "size": [
+        253.60000610351562,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_to",
+          "type": "CONDITIONING",
+          "link": 230
+        },
+        {
+          "name": "conditioning_from",
+          "type": "CONDITIONING",
+          "link": 231
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            232
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "ConditioningConcat"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 15,
+      "type": "ConditioningConcat",
+      "pos": [
+        1092.0999755859375,
+        -615.5855712890625
+      ],
+      "size": [
+        253.60000610351562,
+        46
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_to",
+          "type": "CONDITIONING",
+          "link": 215
+        },
+        {
+          "name": "conditioning_from",
+          "type": "CONDITIONING",
+          "link": 232
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            220
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "ConditioningConcat"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 14,
+      "type": "CLIPTextEncode",
+      "pos": [
+        400,
+        520
+      ],
+      "size": [
+        394.26373291015625,
+        78
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 213
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 214
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            233
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark, bad hands, bad eyes"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 21,
+      "type": "CLIPTextEncode",
+      "pos": [
+        402.4679260253906,
+        641.927490234375
+      ],
+      "size": [
+        394.26373291015625,
+        78
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 228
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 229
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            234
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark, bad hands, bad eyes"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 23,
+      "type": "ConditioningConcat",
+      "pos": [
+        830.3255615234375,
+        440.6436462402344
+      ],
+      "size": [
+        253.60000610351562,
+        46
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_to",
+          "type": "CONDITIONING",
+          "link": 233
+        },
+        {
+          "name": "conditioning_from",
+          "type": "CONDITIONING",
+          "link": 234
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            235
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "ConditioningConcat"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 6,
+      "type": "ConditioningConcat",
+      "pos": [
+        1104.5716552734375,
+        443.8353576660156
+      ],
+      "size": [
+        253.60000610351562,
+        46
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning_to",
+          "type": "CONDITIONING",
+          "link": 217
+        },
+        {
+          "name": "conditioning_from",
+          "type": "CONDITIONING",
+          "link": 235
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            221
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "ConditioningConcat"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 17,
+      "type": "KSampler",
+      "pos": [
+        1360,
+        -510
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 219
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 220
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 221
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 222
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            223
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        32439507491565,
+        "randomize",
+        30,
+        8,
+        "dpmpp_2m",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Load Styles CSV",
+      "pos": [
+        6.0701069831848145,
+        -73.4490966796875
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "positive prompt",
+          "type": "STRING",
+          "links": [
+            212
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "negative prompt",
+          "type": "STRING",
+          "links": [
+            214
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-styles_csv_loader",
+        "ver": "1.0.0",
+        "Node name for S&R": "Load Styles CSV"
+      },
+      "widgets_values": [
+        "Painting | Chinese Ink Brush"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 11,
+      "type": "CLIPTextEncode",
+      "pos": [
+        394.6335754394531,
+        -510.8193359375
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 209
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            215
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "late 90s ford escort gt"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 19,
+      "type": "Load Styles CSV",
+      "pos": [
+        4.866977214813232,
+        88.41268920898438
+      ],
+      "size": [
+        315,
+        78
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "positive prompt",
+          "type": "STRING",
+          "links": [
+            227
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "negative prompt",
+          "type": "STRING",
+          "links": [
+            229
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-styles_csv_loader",
+        "ver": "1.0.0",
+        "Node name for S&R": "Load Styles CSV"
+      },
+      "widgets_values": [
+        "Painting | Oil Painting"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 13,
+      "type": "SaveImage",
+      "pos": [
+        922.5072631835938,
+        -173.6297149658203
+      ],
+      "size": [
+        925.8136596679688,
+        546.4697265625
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 225
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    }
+  ],
+  "links": [
+    [
+      209,
+      9,
+      1,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      210,
+      9,
+      1,
+      12,
+      0,
+      "CLIP"
+    ],
+    [
+      211,
+      9,
+      1,
+      16,
+      0,
+      "CLIP"
+    ],
+    [
+      212,
+      2,
+      0,
+      16,
+      1,
+      "STRING"
+    ],
+    [
+      213,
+      9,
+      1,
+      14,
+      0,
+      "CLIP"
+    ],
+    [
+      214,
+      2,
+      1,
+      14,
+      1,
+      "STRING"
+    ],
+    [
+      215,
+      11,
+      0,
+      15,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      217,
+      12,
+      0,
+      6,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      219,
+      9,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      220,
+      15,
+      0,
+      17,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      221,
+      6,
+      0,
+      17,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      222,
+      1,
+      0,
+      17,
+      3,
+      "LATENT"
+    ],
+    [
+      223,
+      17,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      224,
+      9,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      225,
+      8,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      226,
+      9,
+      1,
+      20,
+      0,
+      "CLIP"
+    ],
+    [
+      227,
+      19,
+      0,
+      20,
+      1,
+      "STRING"
+    ],
+    [
+      228,
+      9,
+      1,
+      21,
+      0,
+      "CLIP"
+    ],
+    [
+      229,
+      19,
+      1,
+      21,
+      1,
+      "STRING"
+    ],
+    [
+      230,
+      16,
+      0,
+      22,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      231,
+      20,
+      0,
+      22,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      232,
+      22,
+      0,
+      15,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      233,
+      14,
+      0,
+      23,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      234,
+      21,
+      0,
+      23,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      235,
+      23,
+      0,
+      6,
+      1,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6140494005778964,
+      "offset": [
+        463.902329391527,
+        980.2549767934698
+      ]
+    },
+    "groupNodes": {}
+  },
+  "version": 0.4
+}

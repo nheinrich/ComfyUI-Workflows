@@ -1,0 +1,868 @@
+{
+  "last_node_id": 30,
+  "last_link_id": 36,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "DownloadAndLoadFlorence2Model",
+      "pos": [
+        607.7081298828125,
+        939.2752075195312
+      ],
+      "size": [
+        315.12652587890625,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora",
+          "type": "PEFTLORA",
+          "shape": 7,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "links": [
+            2
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-florence2",
+        "ver": "1.0.3",
+        "Node name for S&R": "DownloadAndLoadFlorence2Model"
+      },
+      "widgets_values": [
+        "thwri/CogFlorence-2.2-Large",
+        "fp16",
+        "sdpa"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        606.3917236328125,
+        483.6832580566406
+      ],
+      "size": [
+        312.2018737792969,
+        393.5433044433594
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "devnull-rogue-sq.png",
+        "image"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Florence2Run",
+      "pos": [
+        1000.717529296875,
+        59.72364807128906
+      ],
+      "size": [
+        400,
+        364
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "name": "florence2_model",
+          "type": "FL2MODEL",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "caption",
+          "type": "STRING",
+          "links": [
+            3
+          ],
+          "slot_index": 2
+        },
+        {
+          "name": "data",
+          "type": "JSON",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-florence2",
+        "ver": "1.0.3",
+        "Node name for S&R": "Florence2Run"
+      },
+      "widgets_values": [
+        "",
+        "more_detailed_caption",
+        true,
+        false,
+        1024,
+        3,
+        true,
+        "",
+        212903444506019,
+        "randomize"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 17,
+      "type": "KSampler",
+      "pos": [
+        2624.08837890625,
+        138.40850830078125
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 16
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 17
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 18
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            21
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1116781789476288,
+        "randomize",
+        20,
+        1,
+        "dpmpp_2m",
+        "sgm_uniform",
+        1
+      ]
+    },
+    {
+      "id": 22,
+      "type": "FluxGuidance",
+      "pos": [
+        2254.320068359375,
+        73.7364730834961
+      ],
+      "size": [
+        253.62875366210938,
+        58
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            17
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        2.4000000000000004
+      ]
+    },
+    {
+      "id": 14,
+      "type": "EmptySD3LatentImage",
+      "pos": [
+        2308.976806640625,
+        22.638471603393555
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            19
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "EmptySD3LatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 26,
+      "type": "Any Switch (rgthree)",
+      "pos": [
+        1877.950439453125,
+        23.416202545166016
+      ],
+      "size": [
+        252,
+        106
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any_01",
+          "type": "STRING",
+          "dir": 3,
+          "link": 32
+        },
+        {
+          "name": "any_02",
+          "type": "STRING",
+          "dir": 3,
+          "link": 29
+        },
+        {
+          "name": "any_03",
+          "type": "STRING",
+          "dir": 3,
+          "link": null
+        },
+        {
+          "name": "any_04",
+          "type": "STRING",
+          "dir": 3,
+          "link": null
+        },
+        {
+          "name": "any_05",
+          "type": "STRING",
+          "dir": 3,
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "label": "STRING",
+          "type": "STRING",
+          "dir": 4,
+          "shape": 3,
+          "links": [
+            33
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "rgthree-comfy",
+        "ver": "1.0.0"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 21,
+      "type": "VAEDecode",
+      "pos": [
+        2653.19775390625,
+        446.1417236328125
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 21
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 22
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 16,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1442.853271484375,
+        285.5487365722656
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930"
+    },
+    {
+      "id": 19,
+      "type": "SaveImage",
+      "pos": [
+        1906.8358154296875,
+        234.88095092773438
+      ],
+      "size": [
+        686.16162109375,
+        654.2484741210938
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 20
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "flux-txt2img2txt-devnull"
+      ]
+    },
+    {
+      "id": 27,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1921.1646728515625,
+        173.48426818847656
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 34
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            35
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 25,
+      "type": "easy positive",
+      "pos": [
+        1444.67041015625,
+        345.1358337402344
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            29
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.2.8",
+        "Node name for S&R": "easy positive"
+      },
+      "widgets_values": [
+        "A digital artwork depicts a female character in a futuristic setting. She stands confidently, holding a futuristic weapon behinder her back in her right hand. The character wears a shiny, red jacket with a unique design, a black skirt, and thigh-high stockings with a geometric pattern. Her silver hair is styled in a sleek bob, and she wears a black cap with a visor. The background is a blend of gray and white, with abstract shapes and lines, creating a sense of depth and mystery. The color palette is dominated by cool tones, with the character's silver hair contrasting against the dark surroundings."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 4,
+      "type": "easy showAnything",
+      "pos": [
+        1438.191650390625,
+        7.130713939666748
+      ],
+      "size": [
+        395.6868591308594,
+        241.02037048339844
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "type": "*",
+          "shape": 7,
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": [
+            32
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "1.2.8",
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "A digital artwork depicts a female character in a futuristic setting. She stands confidently, holding a long, slender weapon in her right hand. Her attire consists of a shiny, metallic jacket with intricate patterns, a black skirt, and thigh-high stockings. She wears a black cap with a unique design. The background is a blend of cool and muted grays, creating a sense of depth and mystery. The image's style resembles cyberpunk aesthetics, emphasizing high-tech elements and advanced technology."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 18,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        610.5326538085938,
+        29.689861297607422
+      ],
+      "size": [
+        301.46099853515625,
+        59.08364486694336
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "flux1-dev-Q8_0.gguf"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 20,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": [
+        608.6065673828125,
+        159.85391235351562
+      ],
+      "size": [
+        306.45220947265625,
+        110.29069519042969
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            15,
+            34
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "t5-v1_1-xxl-encoder-Q8_0.gguf/t5-v1_1-xxl-encoder-Q8_0.gguf",
+        "clip_l.safetensors",
+        "flux"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 15,
+      "type": "VAELoader",
+      "pos": [
+        605.4738159179688,
+        340.0260009765625
+      ],
+      "size": [
+        308.5373840332031,
+        60.186275482177734
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            22
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    }
+  ],
+  "links": [
+    [
+      1,
+      2,
+      0,
+      1,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      3,
+      0,
+      1,
+      1,
+      "FL2MODEL"
+    ],
+    [
+      3,
+      1,
+      2,
+      4,
+      0,
+      "*"
+    ],
+    [
+      15,
+      20,
+      0,
+      16,
+      0,
+      "CLIP"
+    ],
+    [
+      16,
+      18,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      17,
+      22,
+      0,
+      17,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      18,
+      16,
+      0,
+      17,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      19,
+      14,
+      0,
+      17,
+      3,
+      "LATENT"
+    ],
+    [
+      20,
+      21,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      21,
+      17,
+      0,
+      21,
+      0,
+      "LATENT"
+    ],
+    [
+      22,
+      15,
+      0,
+      21,
+      1,
+      "VAE"
+    ],
+    [
+      29,
+      25,
+      0,
+      26,
+      1,
+      "*"
+    ],
+    [
+      32,
+      4,
+      0,
+      26,
+      0,
+      "STRING"
+    ],
+    [
+      33,
+      26,
+      0,
+      27,
+      1,
+      "STRING"
+    ],
+    [
+      34,
+      20,
+      0,
+      27,
+      0,
+      "CLIP"
+    ],
+    [
+      35,
+      27,
+      0,
+      22,
+      0,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7513148009015777,
+      "offset": [
+        -623.318901634285,
+        224.75962523694747
+      ]
+    }
+  },
+  "version": 0.4
+}
