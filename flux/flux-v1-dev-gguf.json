@@ -201,47 +201,6 @@
       "widgets_values": []
     },
     {
-      "id": 4,
-      "type": "CLIPTextEncode",
-      "pos": [
-        439.9898376464844,
-        244.51710510253906
-      ],
-      "size": [
-        400,
-        200
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            6
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "closeup portrait of a sci-fi warrior robot, rusty metal, mech, cinematic, red eyes, dark interior background, movie scene, rim light, epic, golden hour"
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
       "id": 8,
       "type": "KSampler",
       "pos": [
@@ -293,7 +252,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        239518208652652,
+        12293022315902,
         "randomize",
         20,
         1,
@@ -340,8 +299,8 @@
       "id": 10,
       "type": "SaveImage",
       "pos": [
-        417.398681640625,
-        504.64422607421875
+        442.1756896972656,
+        503.8885192871094
       ],
       "size": [
         686.16162109375,
@@ -366,6 +325,47 @@
       "widgets_values": [
         "ComfyUI"
       ]
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        439.9898376464844,
+        244.51710510253906
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "closeup portrait of a sci-fi warrior robot, rusty metal, mech, cinematic, red eyes, dark interior background, movie scene, rim light, epic, golden hour"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 2,
@@ -399,7 +399,7 @@
         "Node name for S&R": "DualCLIPLoaderGGUF"
       },
       "widgets_values": [
-        "t5-v1_1-xxl-encoder-Q8_0.gguf/t5-v1_1-xxl-encoder-Q8_0.gguf",
+        "t5-v1_1-xxl-encoder-Q8_0.gguf",
         "clip_l.safetensors",
         "flux"
       ]
@@ -493,8 +493,8 @@
     "ds": {
       "scale": 0.9090909090909097,
       "offset": [
-        34.333976440428465,
-        -152.2074298095705
+        278.96164978027207,
+        -43.764442749023694
       ]
     }
   },
