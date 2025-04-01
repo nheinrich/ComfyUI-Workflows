@@ -1,6 +1,6 @@
 {
-  "last_node_id": 25,
-  "last_link_id": 24,
+  "last_node_id": 32,
+  "last_link_id": 26,
   "nodes": [
     {
       "id": 1,
@@ -50,7 +50,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 9,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -80,46 +80,6 @@
       "bgcolor": "#533"
     },
     {
-      "id": 7,
-      "type": "FluxGuidance",
-      "pos": [
-        930,
-        230
-      ],
-      "size": [
-        250,
-        60
-      ],
-      "flags": {},
-      "order": 11,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 6
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            7
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "FluxGuidance"
-      },
-      "widgets_values": [
-        2.4000000000000004
-      ]
-    },
-    {
       "id": 15,
       "type": "ImageUpscaleWithModel",
       "pos": [
@@ -131,7 +91,7 @@
         60
       ],
       "flags": {},
-      "order": 12,
+      "order": 17,
       "mode": 0,
       "inputs": [
         {
@@ -209,7 +169,7 @@
         82
       ],
       "flags": {},
-      "order": 13,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -250,7 +210,7 @@
         46
       ],
       "flags": {},
-      "order": 14,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -293,7 +253,7 @@
         82
       ],
       "flags": {},
-      "order": 10,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -337,7 +297,7 @@
         294
       ],
       "flags": {},
-      "order": 19,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -379,7 +339,7 @@
         46
       ],
       "flags": {},
-      "order": 16,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -423,7 +383,7 @@
         46
       ],
       "flags": {},
-      "order": 18,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -492,37 +452,6 @@
       ]
     },
     {
-      "id": 10,
-      "type": "SaveImage",
-      "pos": [
-        2150,
-        420
-      ],
-      "size": [
-        480.0555419921875,
-        469.35113525390625
-      ],
-      "flags": {},
-      "order": 17,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 11
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "dev-null-character-up"
-      ]
-    },
-    {
       "id": 22,
       "type": "SaveImage",
       "pos": [
@@ -534,7 +463,7 @@
         469.35113525390625
       ],
       "flags": {},
-      "order": 21,
+      "order": 26,
       "mode": 0,
       "inputs": [
         {
@@ -602,7 +531,7 @@
         1010
       ],
       "flags": {},
-      "order": 20,
+      "order": 25,
       "mode": 0,
       "inputs": [
         {
@@ -629,12 +558,12 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_hbspx_00055_.png&type=temp&subfolder=&rand=0.7744457944428531"
+            "url": "/api/view?filename=rgthree.compare._temp_hbspx_00101_.png&type=temp&subfolder=&rand=0.8513486671060031"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_hbspx_00056_.png&type=temp&subfolder=&rand=0.5827147731647835"
+            "url": "/api/view?filename=rgthree.compare._temp_hbspx_00102_.png&type=temp&subfolder=&rand=0.7089894341312009"
           }
         ]
       ]
@@ -682,99 +611,6 @@
       "bgcolor": "#535"
     },
     {
-      "id": 23,
-      "type": "Label (rgthree)",
-      "pos": [
-        1853.673828125,
-        516.3388671875
-      ],
-      "size": [
-        236.14453125,
-        12
-      ],
-      "flags": {
-        "allow_interaction": true
-      },
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "Increasing denoise changes the image more",
-      "properties": {
-        "fontSize": 12,
-        "fontFamily": "Arial",
-        "fontColor": "#888888",
-        "textAlign": "left",
-        "backgroundColor": "transparent",
-        "padding": 0,
-        "borderRadius": 0
-      },
-      "color": "#fff0",
-      "bgcolor": "#fff0"
-    },
-    {
-      "id": 25,
-      "type": "Label (rgthree)",
-      "pos": [
-        1776.562255859375,
-        577.7150268554688
-      ],
-      "size": [
-        309.498046875,
-        12
-      ],
-      "flags": {
-        "allow_interaction": true
-      },
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "dpm++ 2m / karras with higher denoise for lighter changes",
-      "properties": {
-        "fontSize": 12,
-        "fontFamily": "Arial",
-        "fontColor": "#888888",
-        "textAlign": "left",
-        "backgroundColor": "transparent",
-        "padding": 0,
-        "borderRadius": 0
-      },
-      "color": "#fff0",
-      "bgcolor": "#fff0"
-    },
-    {
-      "id": 24,
-      "type": "Label (rgthree)",
-      "pos": [
-        1793.0595703125,
-        596.4869995117188
-      ],
-      "size": [
-        294.10546875,
-        12
-      ],
-      "flags": {
-        "allow_interaction": true
-      },
-      "order": 7,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [],
-      "title": "lcm with low denoise for softer, more 3D-like characters",
-      "properties": {
-        "fontSize": 12,
-        "fontFamily": "Arial",
-        "fontColor": "#888888",
-        "textAlign": "left",
-        "backgroundColor": "transparent",
-        "padding": 0,
-        "borderRadius": 0
-      },
-      "color": "#fff0",
-      "bgcolor": "#fff0"
-    },
-    {
       "id": 4,
       "type": "CLIPTextEncode",
       "pos": [
@@ -786,7 +622,7 @@
         250
       ],
       "flags": {},
-      "order": 8,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -810,10 +646,327 @@
         "Node name for S&R": "CLIPTextEncode"
       },
       "widgets_values": [
-        "a digital illustration of a female hacker.\n\nthe time period that the hacker lives is the year 2084. she belongs to a gang of hackers that fight for resources with other factions in her city, neo-tokyo. she is cunning, quick-witted, ruthless and loyal to her gang.\n\nthe woman has hair so white it's nearly gray, with a hat that resembles a military style. she has reflective earrings and dark black lipstick. her skin is pale white and she wears dark eye makeup. her eyes are vibrant blue, looking slightly to the left.\n\nher clothes are high tech with small pockets, electronics and tools for hacking computer systems spread throughout them. tech jamming materials are embedded throughout. she wears a baggy synthetic jacket hanging from her shoulders with the zip open in the front. the jacket has large letters visible on the sleeves. she wears a short undershirt made of tightly knit reflective tiles. she wears a darkly colored mini-skirt made of mesh fabrics. suspenders are attached to the mini-skirt and hang loosely on her shoulders. she has a utility belt and chain around her waist. on her legs is a brightly colored mesh wrap high up on her right thing. she wears stockings made of a reflective mesh that have constantly rendered electronic geometric images and text on them. the images and text come from nearby electronics that are being hacked by her presence. she wears dark sneakers.\n\nbehind her back she holds a thin, sharp, umbrella.\n\nthe background is of a lookout point with a bustling city in the distant background. there is a dense fog, but the futuristic neo-tokyo high-rises can be made out, along with flying vehicles, construction and a permeating steam throughout the city from its heavy industrial nature.\n\nthe image itself is somewhat monochromatic. the hat, jacket, lipstick skirt and shoes all share similar dark coloring. the reflective material on the shirt matches the reflective lettering on her thigh high stockings. the overall style of the image is like the artist Franz Frazetta. the image itself should feel more rigid, fast and technical, to match the vibe of the character."
+        "a digital illustration of a female hacker.\n\nthe time period that the hacker lives is the year 2084. she belongs to a gang of hackers that fight for resources with other factions in her city, neo-tokyo. she is cunning, quick-witted, ruthless and loyal to her gang.\n\nthe woman has hair so white it's nearly gray, with a hat that resembles a military style. she has reflective earrings and dark black lipstick. her skin is pale white and she wears dark eye makeup. her beautiful clear eyes are vibrant blue, looking slightly to the left.\n\nher clothes are high tech with small pockets, electronics and tools for hacking computer systems spread throughout them. tech jamming materials are embedded throughout. she wears a baggy synthetic jacket hanging from her shoulders with the zip open in the front. the jacket has large letters visible on the sleeves. she wears a short undershirt made of tightly knit reflective tiles. she wears a darkly colored mini-skirt made of mesh fabrics. suspenders are attached to the mini-skirt and hang loosely on her shoulders. she has a utility belt and chain around her waist. on her legs is a brightly colored mesh wrap high up on her right thing. she wears stockings made of a reflective mesh that have constantly rendered electronic geometric images and text on them. the images and text come from nearby electronics that are being hacked by her presence. she wears dark sneakers.\n\nbehind her back she holds a thin, sharp, umbrella.\n\nthe background is of a lookout point with a bustling city in the distant background. there is a dense fog, but the futuristic neo-tokyo high-rises can be made out, along with flying vehicles, construction and a permeating steam throughout the city from its heavy industrial nature.\n\nthe image itself is somewhat monochromatic. the hat, jacket, lipstick skirt and shoes all share similar dark coloring. the reflective material on the shirt matches the reflective lettering on her thigh high stockings. the overall style of the image is like the artist Franz Frazetta. the image itself should feel more rigid, fast and technical, to match the vibe of the character."
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 26,
+      "type": "Bookmark (rgthree)",
+      "pos": [
+        1820,
+        1000
+      ],
+      "size": [
+        210,
+        62
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔖",
+      "properties": {},
+      "widgets_values": [
+        "a",
+        0.92
+      ]
+    },
+    {
+      "id": 27,
+      "type": "Bookmark (rgthree)",
+      "pos": [
+        1461.1314697265625,
+        157.1849365234375
+      ],
+      "size": [
+        210,
+        62
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🔖",
+      "properties": {},
+      "widgets_values": [
+        "s",
+        1.2
+      ]
+    },
+    {
+      "id": 25,
+      "type": "Label (rgthree)",
+      "pos": [
+        1760,
+        550
+      ],
+      "size": [
+        337.505859375,
+        12
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "dpm++ 2m / karras with higher denoise (.85) for lighter changes",
+      "properties": {
+        "fontSize": 12,
+        "fontFamily": "Arial",
+        "fontColor": "#888888",
+        "textAlign": "right",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 24,
+      "type": "Label (rgthree)",
+      "pos": [
+        1710,
+        570
+      ],
+      "size": [
+        388.130859375,
+        12
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "lcm/sgm_uniform with low denoise (.1) for softer, more 3D-like characters",
+      "properties": {
+        "fontSize": 12,
+        "fontFamily": "Arial",
+        "fontColor": "#888888",
+        "textAlign": "right",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 28,
+      "type": "Label (rgthree)",
+      "pos": [
+        1764.2850341796875,
+        590.5269775390625
+      ],
+      "size": [
+        333.45703125,
+        12
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "lcm/karras with low mid denoise (.65) for soft, realistic changes",
+      "properties": {
+        "fontSize": 12,
+        "fontFamily": "Arial",
+        "fontColor": "#888888",
+        "textAlign": "right",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 23,
+      "type": "Label (rgthree)",
+      "pos": [
+        1860,
+        520
+      ],
+      "size": [
+        236.14453125,
+        12
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Increasing denoise changes the image more",
+      "properties": {
+        "fontSize": 12,
+        "fontFamily": "Arial",
+        "fontColor": "#888888",
+        "textAlign": "right",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 10,
+      "type": "SaveImage",
+      "pos": [
+        2150,
+        420
+      ],
+      "size": [
+        480.0555419921875,
+        469.35113525390625
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "dev-null-character-up"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "LoadImage",
+      "pos": [
+        3302.07470703125,
+        342.8573303222656
+      ],
+      "size": [
+        210,
+        459.0616149902344
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (2).png",
+        "image"
+      ]
+    },
+    {
+      "id": 31,
+      "type": "LoadImage",
+      "pos": [
+        3520.92919921875,
+        344.7841796875
+      ],
+      "size": [
+        210,
+        457.7865905761719
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image (3).png",
+        "image"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "FluxGuidance",
+      "pos": [
+        930,
+        230
+      ],
+      "size": [
+        250,
+        60
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        3
+      ]
     },
     {
       "id": 8,
@@ -827,7 +980,7 @@
         270
       ],
       "flags": {},
-      "order": 15,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -867,13 +1020,13 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        698341345603876,
-        "randomize",
-        20,
+        473318901597419,
+        "fixed",
+        12,
         1,
         "lcm",
-        "ddim_uniform",
-        0.14
+        "sgm_uniform",
+        0.4
       ]
     }
   ],
@@ -1059,10 +1212,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.1,
+      "scale": 0.8363636363636383,
       "offset": [
-        -1710.869833517879,
-        -277.15542041604095
+        -1249.126921642151,
+        225.7750584834954
       ]
     }
   },
