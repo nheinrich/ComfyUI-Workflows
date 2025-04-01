@@ -37,43 +37,6 @@
       ]
     },
     {
-      "id": 2,
-      "type": "DualCLIPLoaderGGUF",
-      "pos": [
-        100,
-        350
-      ],
-      "size": [
-        300,
-        106
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            2,
-            3
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
-        "Node name for S&R": "DualCLIPLoaderGGUF"
-      },
-      "widgets_values": [
-        "t5-v1_1-xxl-encoder-Q8_0.gguf/t5-v1_1-xxl-encoder-Q8_0.gguf",
-        "clip_l.safetensors",
-        "flux"
-      ]
-    },
-    {
       "id": 5,
       "type": "CLIPTextEncode",
       "pos": [
@@ -87,7 +50,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -128,7 +91,7 @@
         60
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -168,7 +131,7 @@
         60
       ],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -211,7 +174,7 @@
         60
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -392,7 +355,7 @@
         82
       ],
       "flags": {},
-      "order": 7,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -478,7 +441,7 @@
         60
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -640,48 +603,6 @@
       ]
     },
     {
-      "id": 11,
-      "type": "LoadImage",
-      "pos": [
-        500,
-        590
-      ],
-      "size": [
-        320,
-        330
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            12
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "vir2-angel.png",
-        "image"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 8,
       "type": "KSampler",
       "pos": [
@@ -733,7 +654,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        680785494960637,
+        701802803109291,
         "randomize",
         20,
         1,
@@ -754,7 +675,7 @@
         250
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -782,6 +703,85 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 11,
+      "type": "LoadImage",
+      "pos": [
+        500,
+        590
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "pasted/image.png",
+        "image"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 2,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": [
+        100,
+        350
+      ],
+      "size": [
+        300,
+        106
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2,
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "t5-v1_1-xxl-encoder-Q8_0.gguf",
+        "clip_l.safetensors",
+        "flux"
+      ]
     }
   ],
   "links": [
@@ -966,10 +966,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7513148009015779,
+      "scale": 1,
       "offset": [
-        -1309.130319890817,
-        -801.4250107796996
+        -135.86886627197282,
+        -129.35743591308574
       ]
     }
   },
