@@ -1,5 +1,5 @@
 {
-  "last_node_id": 22,
+  "last_node_id": 25,
   "last_link_id": 24,
   "nodes": [
     {
@@ -50,7 +50,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 7,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -91,7 +91,7 @@
         60
       ],
       "flags": {},
-      "order": 9,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -131,7 +131,7 @@
         60
       ],
       "flags": {},
-      "order": 8,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -209,7 +209,7 @@
         82
       ],
       "flags": {},
-      "order": 10,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -250,7 +250,7 @@
         46
       ],
       "flags": {},
-      "order": 11,
+      "order": 14,
       "mode": 0,
       "inputs": [
         {
@@ -282,68 +282,6 @@
       "widgets_values": []
     },
     {
-      "id": 10,
-      "type": "SaveImage",
-      "pos": [
-        2150,
-        420
-      ],
-      "size": [
-        480.0555419921875,
-        469.35113525390625
-      ],
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 11
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ]
-    },
-    {
-      "id": 22,
-      "type": "SaveImage",
-      "pos": [
-        2650,
-        420
-      ],
-      "size": [
-        480.0555419921875,
-        469.35113525390625
-      ],
-      "flags": {},
-      "order": 18,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 21
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "ComfyUI"
-      ]
-    },
-    {
       "id": 12,
       "type": "ImageScaleDownToSize",
       "pos": [
@@ -355,7 +293,7 @@
         82
       ],
       "flags": {},
-      "order": 5,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -399,7 +337,7 @@
         294
       ],
       "flags": {},
-      "order": 16,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -430,43 +368,6 @@
       ]
     },
     {
-      "id": 13,
-      "type": "UpscaleModelLoader",
-      "pos": [
-        850,
-        590
-      ],
-      "size": [
-        290,
-        60
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "UPSCALE_MODEL",
-          "type": "UPSCALE_MODEL",
-          "links": [
-            13,
-            22
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "UpscaleModelLoader"
-      },
-      "widgets_values": [
-        "4x_NMKD-Siax_200k.pth"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
       "id": 6,
       "type": "VAEDecode",
       "pos": [
@@ -478,7 +379,7 @@
         46
       ],
       "flags": {},
-      "order": 13,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -522,7 +423,7 @@
         46
       ],
       "flags": {},
-      "order": 15,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -554,18 +455,154 @@
       "widgets_values": []
     },
     {
+      "id": 2,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": [
+        100,
+        350
+      ],
+      "size": [
+        300,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2,
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "t5-v1_1-xxl-encoder-Q8_0.gguf",
+        "clip_l.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "SaveImage",
+      "pos": [
+        2150,
+        420
+      ],
+      "size": [
+        480.0555419921875,
+        469.35113525390625
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "dev-null-character-up"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "SaveImage",
+      "pos": [
+        2650,
+        420
+      ],
+      "size": [
+        480.0555419921875,
+        469.35113525390625
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 21
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "dev-null-character-upup"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        850,
+        590
+      ],
+      "size": [
+        290,
+        60
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            13,
+            22
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x-AnimeSharp.pth"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
       "id": 21,
       "type": "Image Comparer (rgthree)",
       "pos": [
         2150,
-        950
+        893.1046142578125
       ],
       "size": [
         980,
         1010
       ],
       "flags": {},
-      "order": 17,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -592,15 +629,191 @@
           {
             "name": "A",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_coaeu_00003_.png&type=temp&subfolder=&rand=0.18176048761417074"
+            "url": "/api/view?filename=rgthree.compare._temp_hbspx_00055_.png&type=temp&subfolder=&rand=0.7744457944428531"
           },
           {
             "name": "B",
             "selected": true,
-            "url": "/api/view?filename=rgthree.compare._temp_coaeu_00004_.png&type=temp&subfolder=&rand=0.523470605977794"
+            "url": "/api/view?filename=rgthree.compare._temp_hbspx_00056_.png&type=temp&subfolder=&rand=0.5827147731647835"
           }
         ]
       ]
+    },
+    {
+      "id": 11,
+      "type": "LoadImage",
+      "pos": [
+        500,
+        590
+      ],
+      "size": [
+        320,
+        330
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "devnull-character-ref.png",
+        "image"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 23,
+      "type": "Label (rgthree)",
+      "pos": [
+        1853.673828125,
+        516.3388671875
+      ],
+      "size": [
+        236.14453125,
+        12
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Increasing denoise changes the image more",
+      "properties": {
+        "fontSize": 12,
+        "fontFamily": "Arial",
+        "fontColor": "#888888",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 25,
+      "type": "Label (rgthree)",
+      "pos": [
+        1776.562255859375,
+        577.7150268554688
+      ],
+      "size": [
+        309.498046875,
+        12
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "dpm++ 2m / karras with higher denoise for lighter changes",
+      "properties": {
+        "fontSize": 12,
+        "fontFamily": "Arial",
+        "fontColor": "#888888",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 24,
+      "type": "Label (rgthree)",
+      "pos": [
+        1793.0595703125,
+        596.4869995117188
+      ],
+      "size": [
+        294.10546875,
+        12
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "lcm with low denoise for softer, more 3D-like characters",
+      "properties": {
+        "fontSize": 12,
+        "fontFamily": "Arial",
+        "fontColor": "#888888",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        500,
+        230
+      ],
+      "size": [
+        400,
+        250
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "a digital illustration of a female hacker.\n\nthe time period that the hacker lives is the year 2084. she belongs to a gang of hackers that fight for resources with other factions in her city, neo-tokyo. she is cunning, quick-witted, ruthless and loyal to her gang.\n\nthe woman has hair so white it's nearly gray, with a hat that resembles a military style. she has reflective earrings and dark black lipstick. her skin is pale white and she wears dark eye makeup. her eyes are vibrant blue, looking slightly to the left.\n\nher clothes are high tech with small pockets, electronics and tools for hacking computer systems spread throughout them. tech jamming materials are embedded throughout. she wears a baggy synthetic jacket hanging from her shoulders with the zip open in the front. the jacket has large letters visible on the sleeves. she wears a short undershirt made of tightly knit reflective tiles. she wears a darkly colored mini-skirt made of mesh fabrics. suspenders are attached to the mini-skirt and hang loosely on her shoulders. she has a utility belt and chain around her waist. on her legs is a brightly colored mesh wrap high up on her right thing. she wears stockings made of a reflective mesh that have constantly rendered electronic geometric images and text on them. the images and text come from nearby electronics that are being hacked by her presence. she wears dark sneakers.\n\nbehind her back she holds a thin, sharp, umbrella.\n\nthe background is of a lookout point with a bustling city in the distant background. there is a dense fog, but the futuristic neo-tokyo high-rises can be made out, along with flying vehicles, construction and a permeating steam throughout the city from its heavy industrial nature.\n\nthe image itself is somewhat monochromatic. the hat, jacket, lipstick skirt and shoes all share similar dark coloring. the reflective material on the shirt matches the reflective lettering on her thigh high stockings. the overall style of the image is like the artist Franz Frazetta. the image itself should feel more rigid, fast and technical, to match the vibe of the character."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 8,
@@ -614,7 +827,7 @@
         270
       ],
       "flags": {},
-      "order": 12,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -654,133 +867,13 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        701802803109291,
+        698341345603876,
         "randomize",
         20,
         1,
-        "dpmpp_2m",
-        "karras",
-        0.9
-      ]
-    },
-    {
-      "id": 4,
-      "type": "CLIPTextEncode",
-      "pos": [
-        500,
-        230
-      ],
-      "size": [
-        400,
-        250
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "clip",
-          "type": "CLIP",
-          "link": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            6
-          ]
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "CLIPTextEncode"
-      },
-      "widgets_values": [
-        "A digital artwork depicts a person with a futuristic aesthetic. The subject wears a metallic, silver outfit with intricate patterns and designs. Their face is covered by a headpiece with a geometric design, and their blue hair flows freely. The background is a solid, bright blue, contrasting with the subject's metallic attire. The artwork's style resembles cyberpunk aesthetics, with a focus on intricate details and a sense of mystery."
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 11,
-      "type": "LoadImage",
-      "pos": [
-        500,
-        590
-      ],
-      "size": [
-        320,
-        330
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            12
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "pasted/image.png",
-        "image"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
-      "id": 2,
-      "type": "DualCLIPLoaderGGUF",
-      "pos": [
-        100,
-        350
-      ],
-      "size": [
-        300,
-        106
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            2,
-            3
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
-        "Node name for S&R": "DualCLIPLoaderGGUF"
-      },
-      "widgets_values": [
-        "t5-v1_1-xxl-encoder-Q8_0.gguf",
-        "clip_l.safetensors",
-        "flux"
+        "lcm",
+        "ddim_uniform",
+        0.14
       ]
     }
   ],
@@ -966,10 +1059,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 1.1,
       "offset": [
-        -135.86886627197282,
-        -129.35743591308574
+        -1710.869833517879,
+        -277.15542041604095
       ]
     }
   },
