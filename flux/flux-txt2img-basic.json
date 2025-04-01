@@ -160,7 +160,8 @@
         "cnr_id": "comfy-core",
         "ver": "0.3.27",
         "Node name for S&R": "VAEDecode"
-      }
+      },
+      "widgets_values": []
     },
     {
       "id": 12,
@@ -308,43 +309,6 @@
       "bgcolor": "#353"
     },
     {
-      "id": 3,
-      "type": "DualCLIPLoaderGGUF",
-      "pos": [
-        200,
-        460
-      ],
-      "size": [
-        315,
-        106
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            1,
-            2
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
-        "Node name for S&R": "DualCLIPLoaderGGUF"
-      },
-      "widgets_values": [
-        "t5-v1_1-xxl-encoder-Q8_0.gguf/t5-v1_1-xxl-encoder-Q8_0.gguf",
-        "clip_l.safetensors",
-        "flux"
-      ]
-    },
-    {
       "id": 6,
       "type": "KSampler",
       "pos": [
@@ -396,13 +360,50 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        165902974515557,
+        1079039679072480,
         "randomize",
         20,
         1,
         "dpmpp_2m",
         "karras",
         1
+      ]
+    },
+    {
+      "id": 3,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": [
+        200,
+        460
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1,
+            2
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "t5-v1_1-xxl-encoder-Q8_0.gguf",
+        "clip_l.safetensors",
+        "flux"
       ]
     }
   ],
@@ -492,10 +493,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9090909090909095,
+      "scale": 0.6830134553650711,
       "offset": [
-        -101.7242205810556,
-        -79.76111022949232
+        -32.95470596399575,
+        -81.31239406162896
       ]
     }
   },
