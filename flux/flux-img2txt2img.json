@@ -48,46 +48,6 @@
       "bgcolor": "#335"
     },
     {
-      "id": 2,
-      "type": "LoadImage",
-      "pos": [
-        606.3917236328125,
-        483.6832580566406
-      ],
-      "size": [
-        312.2018737792969,
-        393.5433044433594
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            1
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "devnull-rogue-sq.png",
-        "image"
-      ]
-    },
-    {
       "id": 1,
       "type": "Florence2Run",
       "pos": [
@@ -152,7 +112,7 @@
         3,
         true,
         "",
-        212903444506019,
+        1084809729841912,
         "randomize"
       ],
       "color": "#2a363b",
@@ -210,7 +170,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        1116781789476288,
+        413302090520435,
         "randomize",
         20,
         1,
@@ -273,7 +233,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -451,37 +411,6 @@
       "bgcolor": "#593930"
     },
     {
-      "id": 19,
-      "type": "SaveImage",
-      "pos": [
-        1906.8358154296875,
-        234.88095092773438
-      ],
-      "size": [
-        686.16162109375,
-        654.2484741210938
-      ],
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 20
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "SaveImage"
-      },
-      "widgets_values": [
-        "flux-txt2img2txt-devnull"
-      ]
-    },
-    {
       "id": 27,
       "type": "CLIPTextEncode",
       "pos": [
@@ -544,7 +473,7 @@
         200
       ],
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -567,6 +496,188 @@
       ],
       "color": "#232",
       "bgcolor": "#353"
+    },
+    {
+      "id": 18,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        610.5326538085938,
+        29.689861297607422
+      ],
+      "size": [
+        301.46099853515625,
+        59.08364486694336
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "flux1-dev-Q8_0.gguf"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 15,
+      "type": "VAELoader",
+      "pos": [
+        605.4738159179688,
+        340.0260009765625
+      ],
+      "size": [
+        308.5373840332031,
+        60.186275482177734
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            22
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        606.3917236328125,
+        483.6832580566406
+      ],
+      "size": [
+        312.2018737792969,
+        393.5433044433594
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "devnull-character-ref.png",
+        "image"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "SaveImage",
+      "pos": [
+        1906.8358154296875,
+        234.88095092773438
+      ],
+      "size": [
+        686.16162109375,
+        654.2484741210938
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 20
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.27",
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "dev-null-img-to-text"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "DualCLIPLoaderGGUF",
+      "pos": [
+        608.6065673828125,
+        159.85391235351562
+      ],
+      "size": [
+        306.45220947265625,
+        110.29069519042969
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            15,
+            34
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-GGUF",
+        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
+        "Node name for S&R": "DualCLIPLoaderGGUF"
+      },
+      "widgets_values": [
+        "t5-v1_1-xxl-encoder-Q8_0.gguf",
+        "clip_l.safetensors",
+        "flux"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
     },
     {
       "id": 4,
@@ -606,121 +717,10 @@
         "Node name for S&R": "easy showAnything"
       },
       "widgets_values": [
-        "A digital artwork depicts a female character in a futuristic setting. She stands confidently, holding a long, slender weapon in her right hand. Her attire consists of a shiny, metallic jacket with intricate patterns, a black skirt, and thigh-high stockings. She wears a black cap with a unique design. The background is a blend of cool and muted grays, creating a sense of depth and mystery. The image's style resembles cyberpunk aesthetics, emphasizing high-tech elements and advanced technology."
+        "A digital artwork depicts a female character in a futuristic setting. She stands confidently, holding a rifle in one hand and a weapon in the other. The character wears a futuristic outfit with a metallic sheen, predominantly silver, black, and white. The outfit consists of a jacket with textured patterns, a skirt, and thigh-high boots with a unique design. She has silver hair styled in a sleek bob and wears a black cap. The background is a blend of gray and white, with abstract geometric patterns, creating a sense of depth and mystery. The overall style of the artwork is cyberpunk, emphasizing advanced technology and futuristic aesthetics."
       ],
       "color": "#232",
       "bgcolor": "#353"
-    },
-    {
-      "id": 18,
-      "type": "UnetLoaderGGUF",
-      "pos": [
-        610.5326538085938,
-        29.689861297607422
-      ],
-      "size": [
-        301.46099853515625,
-        59.08364486694336
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            16
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
-        "Node name for S&R": "UnetLoaderGGUF"
-      },
-      "widgets_values": [
-        "flux1-dev-Q8_0.gguf"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 20,
-      "type": "DualCLIPLoaderGGUF",
-      "pos": [
-        608.6065673828125,
-        159.85391235351562
-      ],
-      "size": [
-        306.45220947265625,
-        110.29069519042969
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            15,
-            34
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "ComfyUI-GGUF",
-        "ver": "bc5223b0e37e053dbec2ea5e5f52c2fd4b8f712a",
-        "Node name for S&R": "DualCLIPLoaderGGUF"
-      },
-      "widgets_values": [
-        "t5-v1_1-xxl-encoder-Q8_0.gguf/t5-v1_1-xxl-encoder-Q8_0.gguf",
-        "clip_l.safetensors",
-        "flux"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 15,
-      "type": "VAELoader",
-      "pos": [
-        605.4738159179688,
-        340.0260009765625
-      ],
-      "size": [
-        308.5373840332031,
-        60.186275482177734
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            22
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.3.27",
-        "Node name for S&R": "VAELoader"
-      },
-      "widgets_values": [
-        "ae.safetensors"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
     }
   ],
   "links": [
@@ -857,10 +857,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.7513148009015777,
+      "scale": 1.1269722013523673,
       "offset": [
-        -623.318901634285,
-        224.75962523694747
+        -708.6575193780524,
+        30.97607336405338
       ]
     }
   },
